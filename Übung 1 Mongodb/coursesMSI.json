@@ -12,7 +12,7 @@
         "lecturer" : "Georg Umlauf", 
         "semester" : 2, 
         "studies" : "MSI", 
-        "sws": 2, 
+        "sws": 4, 
         "ects": 3
     },
     {
@@ -68,7 +68,7 @@
         "lecturer" : "Jessica Martin", 
         "semester" : 1, 
         "studies" : "MSI", 
-        "sws": 3, 
+        "sws": 6, 
         "ects": 5
     },
     {
@@ -76,7 +76,7 @@
         "lecturer" : "Barbara Staehle", 
         "semester" : 1, 
         "studies" : "MSI", 
-        "sws": 2, 
+        "sws": 4, 
         "ects": 3
     }
 

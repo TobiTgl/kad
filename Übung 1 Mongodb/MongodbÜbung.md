@@ -98,12 +98,38 @@ Schema:
 Geben Sie Anfragen für folgende Fragen an
 a) Welche Studiengänge haben einen Bachelor als Abschluss? Es sollen nur die
 Studiengangskürzel ausgegeben werden.
-b) Ermitteln Sie, welche AIN-Vorlesungen weniger als 5 SWS besitzen. Es sollen nur
+
+db.studies.find({"level": "Bachelor"}, {"_id":0, "abbreviation":1})
+
+b) Ermitteln Sie, **welche AIN-Vorlesungen weniger als 5 SWS besitzen.** Es sollen nur
 die Vorlesungsnamen alphabetisch sortiert ausgegeben werden.
+
+db.courses.find({$where: "this.sws > this.ects && this.studies == 'AIN'"}, {"_id":0, "name":1}).sort({"name": 1})
+
 c) Bei welchen Vorlesungen ist SWS größer als ECTS?
+
+db.courses.find({$where: "this.sws > this.ects"})
+
 d) Wie viele AIN-Vorlesungen halten die einzelnen Professoren? Es soll nur der
 Professorname und die SWS-Summe ausgegeben werden.
+
+db.courses.aggregate([
+    {$match: { studies: "AIN" }},
+    {"$project" : {"lecturer" : 1 , "sws" : 1 }},
+    {$group: { _id: "$lecturer", "count": { $sum: 1 }, sws: {$sum: "$sws"}}},
+    {"$sort" : {"count" : -1 }},
+])
+
 e) Welcher Professor hält am meisten SWS in AIN-Vorlesungen?
+
+db.courses.aggregate([
+    {$match: { studies: "AIN" }},
+    {"$project" : {"lecturer" : 1 , "sws" : 1 }},
+    {$group: { _id: "$lecturer", "count": { $sum: 1 }, sws: {$sum: "$sws"}}},
+    {"$sort" : {"sws" : -1 }},
+])
+
+igw nur größtes drin lassen?
 
 
 # Aufgabe 3

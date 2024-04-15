@@ -5,7 +5,7 @@
         "semester" : 1, 
         "studies" : "WIN", 
         "sws": 4, 
-        "ects": 6
+        "ects": 2
     },
     {
         "name": "Accounting", 
@@ -29,7 +29,7 @@
         "semester" : 2, 
         "studies" : "WIN", 
         "sws": 3, 
-        "ects": 5
+        "ects": 2
     },
     {
         "name": "Management Information Systems", 
