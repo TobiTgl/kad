@@ -1,0 +1,18 @@
+[{
+    "abbreviation": "AIN",
+    "name": "Angewandte Informatik",
+    "level": "Bachelor",
+    "courses": {}
+},
+{
+    "abbreviation": "WIN",
+    "name": "Wirtschaftsinformatik",
+    "level": "Bachelor",
+    "courses": {}
+},
+{
+    "abbreviation": "MSI",
+    "name": "Informatik",
+    "level": "Master",
+    "courses": {}
+}]

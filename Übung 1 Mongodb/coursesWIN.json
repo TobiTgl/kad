@@ -1,0 +1,82 @@
+[
+    {
+        "name": "Business Administration", 
+        "lecturer" : "John Doe", 
+        "semester" : 1, 
+        "studies" : "WIN", 
+        "sws": 4, 
+        "ects": 6
+    },
+    {
+        "name": "Accounting", 
+        "lecturer" : "John Doe", 
+        "semester" : 1, 
+        "studies" : "WIN", 
+        "sws": 3, 
+        "ects": 5
+    },
+    {
+        "name": "Economics", 
+        "lecturer" : "Jane Smith", 
+        "semester" : 2, 
+        "studies" : "WIN", 
+        "sws": 2, 
+        "ects": 4
+    },
+    {
+        "name": "Marketing", 
+        "lecturer" : "Jane Smith", 
+        "semester" : 2, 
+        "studies" : "WIN", 
+        "sws": 3, 
+        "ects": 5
+    },
+    {
+        "name": "Management Information Systems", 
+        "lecturer" : "Robert Johnson", 
+        "semester" : 3, 
+        "studies" : "WIN", 
+        "sws": 2, 
+        "ects": 4
+    },
+    {
+        "name": "Business Law", 
+        "lecturer" : "Robert Johnson", 
+        "semester" : 3, 
+        "studies" : "WIN", 
+        "sws": 3, 
+        "ects": 5
+    },
+    {
+        "name": "Finance", 
+        "lecturer" : "Emily Davis", 
+        "semester" : 4, 
+        "studies" : "WIN", 
+        "sws": 2, 
+        "ects": 4
+    },
+    {
+        "name": "Human Resources Management", 
+        "lecturer" : "Emily Davis", 
+        "semester" : 4, 
+        "studies" : "WIN", 
+        "sws": 3, 
+        "ects": 5
+    },
+    {
+        "name": "Operations Management", 
+        "lecturer" : "Michael Miller", 
+        "semester" : 5, 
+        "studies" : "WIN", 
+        "sws": 2, 
+        "ects": 4
+    },
+    {
+        "name": "Strategic Management", 
+        "lecturer" : "Michael Miller", 
+        "semester" : 5, 
+        "studies" : "WIN", 
+        "sws": 3, 
+        "ects": 5
+    }
+]

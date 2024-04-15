@@ -1,0 +1,54 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://example.com/product.schema.json",
+    "title": "Aufgabe 1",
+    "description": "Aufgabe 1 MongoDB Übung KAD",
+    "type": "object",
+      "properties": {
+          "abbreviation": {
+              "description": "Abbreviation of the study subject",
+              "type": "string"
+          },
+          "name": {
+              "description": "Name of the of the study subject",
+              "type": "string"
+          },
+          "level": {
+              "description": "Degree level",
+              "type": "string"
+          },
+          "courses": {
+              "description": "Associated courses to the studies",
+              "type": "object",
+              "properties": {
+                  "name": {
+                      "description": "Name of the course",
+                      "type": "string"
+                  },
+                  "lecturer": {
+                      "description": "Lecturer of the course",
+                      "type": "string"
+                  },
+                  "semester": {
+                      "description": "Semester that the course takes place during studies",
+                      "type": "string"
+                  },
+                  "studies": {
+                      "description": "Studies the course is associated with",
+                      "type": "string"
+                  },
+                  "sws": {
+                      "description": "Weekly lecture hours  of the course",
+                      "type": "integer"
+                  },
+                  "ects": {
+                      "description": "ects credits students get from taking the course",
+                      "type": "integer"
+                  }
+  
+              },
+              "required": ["name", "lecturer", "semester", "studies", "sws", "ects"] 
+          }
+      },
+      "required" : ["abbreviation", "name", "level"]
+  }

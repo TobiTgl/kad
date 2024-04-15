@@ -1,0 +1,82 @@
+[
+    {
+        "name": "Software Engineering", 
+        "lecturer" : "Ralf Schimkat", 
+        "semester" : 1, 
+        "studies" : "AIN", 
+        "sws": 4, 
+        "ects": 6
+    },
+    {
+        "name": "Datenstrukturen", 
+        "lecturer" : "Jane Smith", 
+        "semester" : 1, 
+        "studies" : "AIN", 
+        "sws": 3, 
+        "ects": 5
+    },
+    {
+        "name": "Netzwerktechnik", 
+        "lecturer" : "Robert Johnson", 
+        "semester" : 2, 
+        "studies" : "AIN", 
+        "sws": 2, 
+        "ects": 4
+    },
+    {
+        "name": "Betriebsysteme", 
+        "lecturer" : "Emily Davis", 
+        "semester" : 2, 
+        "studies" : "AIN", 
+        "sws": 3, 
+        "ects": 5
+    },
+    {
+        "name": "Databanken 1", 
+        "lecturer" : "Oliver Eck", 
+        "semester" : 2, 
+        "studies" : "AIN", 
+        "sws": 2, 
+        "ects": 5
+    },
+    {
+        "name": "Databanken 2", 
+        "lecturer" : "Oliver Eck", 
+        "semester" : 3, 
+        "studies" : "AIN", 
+        "sws": 2, 
+        "ects": 5
+    },
+    {
+        "name": "Web Entwicklung", 
+        "lecturer" : "Sarah Brown", 
+        "semester" : 3, 
+        "studies" : "AIN", 
+        "sws": 3, 
+        "ects": 5
+    },
+    {
+        "name": "Mathematik 1", 
+        "lecturer" : "Barbara Staehle", 
+        "semester" : 1, 
+        "studies" : "AIN", 
+        "sws": 3, 
+        "ects": 5
+    }    ,
+    {
+        "name": "Mathematik 2", 
+        "lecturer" : "Barbara Staehle", 
+        "semester" : 3, 
+        "studies" : "AIN", 
+        "sws": 3, 
+        "ects": 5
+    },
+    {
+        "name": "Projektmanagement", 
+        "lecturer" : "Emily Davis", 
+        "semester" : 3, 
+        "studies" : "AIN", 
+        "sws": 2, 
+        "ects": 4
+    }
+]

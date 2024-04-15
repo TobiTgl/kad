@@ -1,0 +1,83 @@
+[
+    {
+        "name": "Agile Vorgehensmodelle", 
+        "lecturer" : "Ralf Schimkat", 
+        "semester" : 1, 
+        "studies" : "MSI", 
+        "sws": 3, 
+        "ects": 5
+    },
+    {
+        "name": "Algorytmentechnik", 
+        "lecturer" : "Georg Umlauf", 
+        "semester" : 2, 
+        "studies" : "MSI", 
+        "sws": 2, 
+        "ects": 3
+    },
+    {
+        "name": "Concurrency", 
+        "lecturer" : "Oliver Haase", 
+        "semester" : 2, 
+        "studies" : "MSI", 
+        "sws": 2, 
+        "ects": 4
+    },
+    {
+        "name": "Seminar", 
+        "lecturer" : "Georg Umlauf", 
+        "semester" : 1, 
+        "studies" : "MSI", 
+        "sws": 3, 
+        "ects": 5
+    },
+    {
+        "name": "Konzepte aktueller Datenbanksysteme", 
+        "lecturer" : "Oliver Eck", 
+        "semester" : 3, 
+        "studies" : "MSI", 
+        "sws": 2, 
+        "ects": 4
+    },
+    {
+        "name": "Mobile Kommunikation",  
+        "lecturer" : "Rainer Müller", 
+        "semester" : 1, 
+        "studies" : "MSI", 
+        "sws": 3, 
+        "ects": 5
+    },
+    {
+        "name": "Machine Learning", 
+        "lecturer" : "Jennifer Taylor", 
+        "semester" : 1, 
+        "studies" : "MSI", 
+        "sws": 3, 
+        "ects": 5
+    },
+    {
+        "name": "Cloud Application Development", 
+        "lecturer" : "Joachim Eigelsperger", 
+        "semester" : 1, 
+        "studies" : "MSI", 
+        "sws": 2, 
+        "ects": 4
+    },
+    {
+        "name": "Cyber Security", 
+        "lecturer" : "Jessica Martin", 
+        "semester" : 1, 
+        "studies" : "MSI", 
+        "sws": 3, 
+        "ects": 5
+    },
+    {
+        "name": "Stochastik", 
+        "lecturer" : "Barbara Staehle", 
+        "semester" : 1, 
+        "studies" : "MSI", 
+        "sws": 2, 
+        "ects": 3
+    }
+
+]

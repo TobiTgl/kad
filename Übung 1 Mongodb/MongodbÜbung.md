@@ -46,9 +46,27 @@ Schema:
                 },
                 "lecturer"{
                     "description": "Lecturer of the course",
-                    "type": ""
+                    "type": "string"
+                },
+                "semester": {
+                    "description": "Semester that the course takes place during studies",
+                    "type": "integer"
+                },
+                "studies": {
+                    "description": "Studies the course is associated with",
+                    "type": "string"
+                },
+                "sws": {
+                    "description": "Weekly lecture hours  of the course",
+                    "type": "integer"
+                },
+                "ects": {
+                    "description": "ects credits students get from taking the course",
+                    "type": "integer"
                 }
-          }
+
+            },
+            "required": ["name", "lecturer", "semester", "studies", "sws", "ects"] 
         }
     },
     "required" : ["abbreviation", "name", "level"]
@@ -59,19 +77,19 @@ Schema:
     "abbreviation": "AIN",
     "name": "Angewandte Informatik",
     "level": "Bachelor",
-    "courses": [{}]
-},
+    "courses": {"name": "test", "lecturer" : "asd", "semester" : 2, "studies" : "asd", "sws": 2, "ects": 5}
+}
 {
     "abbreviation": "WIN",
     "name": "Wirtschaftsinformatik",
     "level": "Bachelor",
-    "courses": [{}]
+    "courses": {}
 },
 {
     "abbreviation": "MSI",
     "name": "Informatik",
     "level": "Master",
-    "courses": [{}]
+    "courses": {}
 },
 
 
