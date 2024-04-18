@@ -99,12 +99,12 @@ Geben Sie Anfragen für folgende Fragen an
 a) Welche Studiengänge haben einen Bachelor als Abschluss? Es sollen nur die
 Studiengangskürzel ausgegeben werden.
 
-db.studies.find({"level": "Bachelor"}, {"_id":0, "abbreviation":1})
+db.studyprogramm.find({level: "Bachelor"}, {_id:0, abbreviation:1})
 
 b) Ermitteln Sie, **welche AIN-Vorlesungen weniger als 5 SWS besitzen.** Es sollen nur
 die Vorlesungsnamen alphabetisch sortiert ausgegeben werden.
 
-db.courses.find({$where: "this.sws > this.ects && this.studies == 'AIN'"}, {"_id":0, "name":1}).sort({"name": 1})
+db.courses.find({$where: "this.sws > this.ects && this.studyprogramm == 'AIN'"}, {"_id":0, "name":1}).sort({"name":1})
 
 c) Bei welchen Vorlesungen ist SWS größer als ECTS?
 
@@ -114,19 +114,26 @@ d) Wie viele AIN-Vorlesungen halten die einzelnen Professoren? Es soll nur der
 Professorname und die SWS-Summe ausgegeben werden.
 
 db.courses.aggregate([
-    {$match: { studies: "AIN" }},
+    {$match: { 
+        "studyprogram.$ref": "studyprogramm",
+        "studyprogram.$id": db.studyprogramm.findOne({"abbreviation": "AIN"})._id
+    }},
     {"$project" : {"lecturer" : 1 , "sws" : 1 }},
     {$group: { _id: "$lecturer", "count": { $sum: 1 }, sws: {$sum: "$sws"}}},
     {"$sort" : {"count" : -1 }},
 ])
 
-e) Welcher Professor hält am meisten SWS in AIN-Vorlesungen?
+e) Welcher Professor hält am meisten SWS in AIN-Vorlesungen? wie maX?
 
 db.courses.aggregate([
-    {$match: { studies: "AIN" }},
+    {$match: { 
+        "studyprogram.$ref": "studyprogramm",
+        "studyprogram.$id": db.studyprogramm.findOne({"abbreviation": "AIN"})._id
+    }},
     {"$project" : {"lecturer" : 1 , "sws" : 1 }},
     {$group: { _id: "$lecturer", "count": { $sum: 1 }, sws: {$sum: "$sws"}}},
     {"$sort" : {"sws" : -1 }},
+    {"$limit" : 1}
 ])
 
 igw nur größtes drin lassen?
@@ -137,9 +144,69 @@ Gegeben ist die unten angegebene Datenbank.
 Geben Sie für die folgenden Suchanfragen Queries in MongoDB an.
 a)
 Welche Abteilungen haben keine Mitarbeiter?
+
+db.abt.aggregate([
+    {
+    $project: { "name": 1, "anr": 1, "ort": 1 } 
+    },
+    {
+        $lookup: {
+            from: "pers",
+            localField: "_id",
+            foreignField: "abteilung.$id",
+            as: "mitarbeiter"
+        }
+    },
+    { 
+        $match: { mitarbeiter: { $size: 0 } } 
+    }
+]);
+
 b)
 Wer hat einen Chef der jünger ist als er selbst? Vergleichen Sie die Anfrage mit
 einem äquivalenten SQL-Befehl.
+
+db.pers.aggregate([
+    {    
+        $lookup: {
+            from: "pers",
+            localField: "vorgesetzter.$id",
+            foreignField: "_id",
+            as: "vorgesetzter"
+        }    
+    },
+  { $unwind: "$vorgesetzter" },
+   {$match: { "jahrg" : { $ne : null }}},
+  { $match: { $expr: { $gt: ["$vorgesetzter.jahrg", "$jahrg"] } } }
+    
+    
+])
+
+SELECT * 
+FROM pers as pers1
+LEFT OUTER JOIN pers as pers2 ON pers1._id = pers2._id
+WHERE pers1.jahrg IS NOT NULL AND pers.jahrg < pers2.jahrg
+
+
+
+
 c)
 Welche Abteilung hat durchschnittlich die jüngsten Mitarbeiter? Es sollen nur die
 Abteilungsnummer und der Abteilungsname ausgegeben werden.
+
+db.abt.aggregate([
+    {
+        $lookup:{
+            from: "pers",
+            localField: "_id",
+            foreignField: "abteilung.$id",
+            as: "mitarbeiter"
+       }
+    },
+  { $unwind: "$mitarbeiter"},
+  { $group: {_id: {name: "$name", anr: "$anr", }, employeesAvgJahrg: { $avg: "$mitarbeiter.jahrg"}}},
+  { $sort: { employeesAvgJahrg: -1 } }, 
+  { $limit: 1 },
+  { $project: { "name": "$_id.name", "anr": "$_id.anr", "_id": 0 } }
+  
+])

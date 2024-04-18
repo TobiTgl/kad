@@ -96,7 +96,7 @@ ain1={
         "semester" : 1,
         "sws": 4, 
         "ects": 6,
-        "studyprogram": new DBRef("studyprogramm", db.studyprogramm.findOne({"abbreviation": "AIN"})._id)
+        "studyprogram": neiw DBRef("studyprogramm", db.studyprogramm.findOne({"abbreviation": "AIN"})._id)
     }
 ain2={
         "name": "Datenstrukturen", 
